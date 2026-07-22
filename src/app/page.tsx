@@ -9,7 +9,7 @@ import ContactSection from "@/components/pagesComponents/ContactSection";
 import Footer from "@/components/pagesComponents/Footer";
 export default function Home() {
   return (
-    <div className="md:mx-3 md:px-3 sm:mx-2 sm:px-2 lg:mx-4 lg:px-4 xl:mx-6 xl:px-6 ">
+    <div className="md:mx-3 md:px-3 sm:mx-2 sm:px-2 lg:mx-4 lg:px-4 xl:mx-6 xl:px-6 px-1 mx-1 ">
       <StarfieldBackgroundDemo />
       {/* Header */}
       <section id="navbar">
