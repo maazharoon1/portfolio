@@ -9,7 +9,7 @@ import ContactSection from "@/components/pagesComponents/ContactSection";
 import Footer from "@/components/pagesComponents/Footer";
 export default function Home() {
   return (
-    <div className="mx-5 px-5">
+    <div className="md:mx-3 md:px-3 sm:mx-2 sm:px-2 lg:mx-4 lg:px-4 xl:mx-6 xl:px-6 ">
       <StarfieldBackgroundDemo />
       {/* Header */}
       <section id="navbar">
@@ -20,7 +20,7 @@ export default function Home() {
 
        <section
       id="home"
-      className="relative flex  w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 sm:mt-10 mt-20"
+      className="relative flex  w-full items-center overflow-hidden  md:px-0 sm:mt-10 mt-20 md:w-11/12 mx-auto"
     >
           <Hero />
       </section>
@@ -28,35 +28,35 @@ export default function Home() {
       < Seperator className="my-5" />
            <section
       id="about"
-      className="relative flex w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 "
+      className="relative flex w-full items-center overflow-hidden md:w-11/12 mx-auto  md:px-0 "
     >
           <AboutME />
       </section>
        < Seperator className="my-10" />
            <section
       id="projects"
-      className="relative flex w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 "
+      className="relative flex w-full items-center overflow-hidden md:w-11/12 mx-auto  md:px-0 "
     >
           <Project />
       </section>
        < Seperator className="my-10" />
            <section
       id="testimonials"
-      className="relative flex w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 "
+      className="relative flex w-full items-center overflow-hidden md:w-11/12 mx-auto md:px-0 "
     >
           <TestimonialsSection />
       </section>
        < Seperator className="my-10" />
            <section
       id="contact"
-      className="relative flex w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 "
+      className="relative flex w-full items-center overflow-hidden  md:w-11/12 mx-auto md:px-0 "
     >
           <ContactSection />
       </section>
-       < Seperator className="mt-10" />
+       < Seperator className="mt-10 md:w-11/12 mx-auto" />
            <footer
       id="footer"
-      className="relative flex w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 "
+      className="relative flex w-full items-center overflow-hidden px-2 md:px-0 "
     >
           <Footer />
       </footer>

@@ -14,9 +14,9 @@ type SkillPillProps = {
 };
 
 const stats: StatCardProps[] = [
-  { icon: '👨‍💻', value: '2+ Years', label: 'Experience' },
-  { icon: '🚀', value: '25+ Projects', label: 'Completed' },
-  { icon: '🤝', value: '10+ Clients', label: 'Happy Clients' },
+  { icon: '👨‍💻', value: '8+ Years', label: 'Experience' },
+  { icon: '🚀', value: '100+ Projects', label: 'Completed' },
+  { icon: '🤝', value: '95+ Clients', label: 'Happy Clients' },
   { icon: '📚', value: 'Always', label: 'Learning' },
 ];
 
@@ -100,7 +100,7 @@ export default function AboutME() {
                 Crafting modern digital experiences with clean code and thoughtful design.
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                I am a Full Stack Developer and UI Designer who enjoys building modern, interactive and high-performance web applications. I focus on elevated experiences, polished interfaces, and performance-first development for brands that want a premium digital presence.
+                I am a Full Stack Developer and UI Designer who enjoys building modern, interactive and high-performance web applications. I focus on elevated experiences, polished interfaces, and performance first development for brands that want a premium digital presence.
               </p>
             </motion.div>
 

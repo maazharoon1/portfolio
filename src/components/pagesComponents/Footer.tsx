@@ -1,9 +1,10 @@
 const Footer = () => {
   return (
     <>
-      <div className="flex w-full items-center justify-center h-15 mt-1.5 text-sm font-medium py-4 rounded-t-lg">
+      <div className="flex w-full items-center justify-center h-15 mt-2.5 sm:mt-1.5 text-sm font-medium py-4 rounded-t-lg">
         <span className="text-gray-700 ">
           @All rights reserved. Designed and built by{" "}
+          <br  className="sm:hidden"/>
           <a
             href="https://x.com/maazharoon900"
             target="_blank"

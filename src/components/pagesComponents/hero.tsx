@@ -17,17 +17,17 @@ const heroVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20">
+    <section className="relative overflow-hidden py-16  md:mt-13  sm:py-20">
 
       <div className="absolute inset-x-0 top-0 h-56 bg-linear-to-r from-blue-100 via-transparent to-cyan-100 opacity-80 blur-3xl" />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-center gap-12 px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex  flex-col items-start justify-center gap-12 px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           animate="visible"
           custom={0}
           variants={heroVariants}
-          className="inline-flex rounded-full bg-blue-50 px-4 py-1 text-sm font-medium text-blue-700 ring-1 ring-blue-200 w-max"
+          className="hidden sm:inline-flex rounded-full  bg-blue-50 px-4 py-1 text-sm font-medium text-blue-700 ring-1 ring-blue-200 w-max"
         >
           Creative web experiences for modern brands
         </motion.div>
@@ -39,7 +39,7 @@ export default function Hero() {
               animate="visible"
               custom={0.1}
               variants={heroVariants}
-              className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl"
+              className="xl:max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl"
             >
               Hi, I'm <span className="text-blue-600">Maaz Haroon</span>, building fast and modern web apps.
             </motion.h1>
