@@ -5,6 +5,8 @@ import Seperator from "@/components/ui/seperator";
 import AboutME from "@/components/pagesComponents/AboutME";
 import Project from "@/components/pagesComponents/Project";
 import TestimonialsSection from "@/components/pagesComponents/testemonails";
+import ContactSection from "@/components/pagesComponents/ContactSection";
+import Footer from "@/components/pagesComponents/Footer";
 export default function Home() {
   return (
     <div className="mx-5 px-5">
@@ -18,7 +20,7 @@ export default function Home() {
 
        <section
       id="home"
-      className="relative flex min-h-screen  w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 sm:mt-10 mt-20"
+      className="relative flex  w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 sm:mt-10 mt-20"
     >
           <Hero />
       </section>
@@ -44,6 +46,20 @@ export default function Home() {
     >
           <TestimonialsSection />
       </section>
+       < Seperator className="my-10" />
+           <section
+      id="contact"
+      className="relative flex w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 "
+    >
+          <ContactSection />
+      </section>
+       < Seperator className="mt-10" />
+           <footer
+      id="footer"
+      className="relative flex w-full items-center overflow-hidden md:w-10/12 md:mx-auto md:px-0 "
+    >
+          <Footer />
+      </footer>
 
     </div>
   );

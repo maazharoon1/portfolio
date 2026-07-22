@@ -90,7 +90,7 @@ export default function Hero() {
             <div className="pointer-events-none absolute -left-10 top-10 h-44 w-44 rounded-full bg-blue-200/30 blur-3xl" />
             <div className="pointer-events-none absolute -right-10 bottom-10 h-36 w-36 rounded-full bg-cyan-200/40 blur-3xl" />
 
-            <div className="overflow-hidden hidden xl:flex rounded-[2rem] border bg-white/10  p-4 shadow-2xl shadow-blue-100/30 backdrop-blur-xl absolute -bottom-25">
+            <div className="overflow-hidden hidden xl:flex rounded-[2rem] border bg-white/10  p-4 shadow-2xl shadow-blue-100/30 backdrop-blur-xl absolute -bottom-45">
               <Image
                 src="/hero.png"
                 

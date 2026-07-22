@@ -383,12 +383,13 @@ const Project = () => {
               <div className="flex flex-wrap items-center justify-center gap-3">
                 <motion.button
                   type="button"
-                  onClick={() => setActivePage((current) => Math.max(current - 1, 1)) }
+                  onClick={() => setActivePage((current) => Math.max(current - 1, 1))}
                   disabled={activePage === 1}
                   whileHover={{ scale: 1.04, y: activePage === 1 ? 0 : -1 }}
                   whileTap={{ scale: 0.96 }}
                   transition={buttonSpring}
-                  className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
+                  className={`lg:inline-flex items-center gap-2 hidden
+                      rounded-full border px-4 py-2 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
                     activePage === 1
                       ? 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
                       : 'border-slate-200 bg-white text-slate-700 shadow-[0_18px_70px_-40px_rgba(59,130,246,0.35)] hover:border-indigo-300 hover:bg-indigo-50/80 hover:text-indigo-700'
@@ -410,8 +411,8 @@ const Project = () => {
                     const isActive = page === activePage;
                     return (
                       <motion.button
-                        key={page}
                         type="button"
+                        key={page}
                         onClick={() => setActivePage(page)}
                         aria-current={isActive ? 'page' : undefined}
                         whileHover={{ scale: 1.05, y: -1 }}
@@ -438,7 +439,7 @@ const Project = () => {
                   whileHover={{ scale: 1.04, y: activePage === totalPages ? 0 : -1 }}
                   whileTap={{ scale: 0.96 }}
                   transition={buttonSpring}
-                  className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
+                  className={` hidden lg:inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
                     activePage === totalPages
                       ? 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
                       : 'border-slate-200 bg-white text-slate-700 shadow-[0_18px_70px_-40px_rgba(59,130,246,0.35)] hover:border-indigo-300 hover:bg-indigo-50/80 hover:text-indigo-700'
@@ -479,8 +480,8 @@ function PortfolioCard({ project }: { project: Project }) {
       transition={{ type: "spring", stiffness: 160, damping: 18 }}
       className="group relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-950/5 shadow-[0_18px_70px_-30px_rgba(59,130,246,0.35)]"
     >
-      <Link href={project.href} target="_blank" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-        <div className="relative h-65 w-full overflow-hidden rounded-[2rem] bg-slate-900">
+      <Link href={project.href} target="_blank" rel="noopener noreferrer" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+        <div className="relative h-65 w-full overflow-hidden md:rounded-[2rem] bg-slate-900">
           <Image
             src={project.image}
             alt={project.name}
@@ -540,16 +541,25 @@ function PortfolioCTA() {
       <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
         Let’s create a meaningful digital experience that feels polished, modern, and unmistakably premium.
       </p>
-      <button onClick={()=> scrollToSection("contact")} className="group mt-8 inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-        Contact Me
-        <motion.span
-          className="ml-3 inline-flex"
-          animate={{ x: [0, 3, 0] }}
-          transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-        >
-          <ArrowRight className="h-4 w-4" />
-        </motion.span>
-      </button>
+          <motion.button
+                 className="inline-flex mt-6 items-center justify-center px-6 py-3 rounded-full bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg transition-all duration-300"
+                 whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(59, 130, 246, 0.4)' }}
+                 whileTap={{ scale: 0.95 }}
+                 initial={{ opacity: 0 }}
+                 whileInView={{ opacity: 1 }}
+                 transition={{ delay: 0.3 }}
+                 viewport={{ once: true }}
+                   onClick={() => scrollToSection("contact")}
+               >
+                Contact Me
+                 <motion.span
+                   animate={{ x: [0, 4, 0] }}
+                   transition={{ duration: 1, repeat: Infinity }}
+                   className="ml-2"
+                 >
+                   →
+                 </motion.span>
+               </motion.button>
     </motion.div>
   );
 }

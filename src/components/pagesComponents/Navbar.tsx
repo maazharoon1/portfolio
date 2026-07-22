@@ -26,14 +26,14 @@ export default function Navbar() {
       transition={{ duration: 0.7 }}
       className="fixed left-1/2 top-4 z-50 w-[95%] max-w-7xl -translate-x-1/2"
     >
-      <nav className="flex items-center justify-between rounded-full border border-white/10 bg-white/10 px-5 py-3 backdrop-blur-xl shadow-xl">
+      <nav aria-label="Primary navigation" className="flex items-center justify-between rounded-full border border-white/10 bg-white/10 px-5 py-3 backdrop-blur-xl shadow-xl">
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" aria-label="Go to homepage">
           <Image
             src="/logo.png"
             width={45}
             height={45}
-            alt="Logo"
+            alt="Maaz Haroon logo"
             priority
           />
         </Link>
@@ -73,8 +73,11 @@ export default function Navbar() {
 
         {/* Mobile Button */}
         <button
+          type="button"
           onClick={() => setOpen(!open)}
           className="lg:hidden"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>

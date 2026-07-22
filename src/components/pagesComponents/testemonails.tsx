@@ -1,8 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { scrollToSection } from '@/lib/scroll';
 
 interface Testimonial {
   id: number;
@@ -106,7 +108,6 @@ const platformColors: Record<string, { bg: string; text: string }> = {
 };
 
 export default function TestimonialsSection() {
-  const containerRef = React.useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(3);
 
@@ -255,10 +256,7 @@ export default function TestimonialsSection() {
           </motion.div>
 
           {/* Carousel Container */}
-          <div
-            ref={containerRef}
-            className="relative"
-          >
+          <div className="relative">
             {/* Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               <AnimatePresence mode="wait">
@@ -356,8 +354,9 @@ export default function TestimonialsSection() {
             <div className="flex items-center justify-between gap-4">
               {/* Previous Button */}
               <motion.button
+                type="button"
                 onClick={prevPage}
-                className="p-3 rounded-full bg-linear-to-br from-blue-50 to-purple-50 border border-blue-200/50 text-gray-700 hover:text-blue-600 transition-colors duration-300"
+                className="p-3 rounded-full bg-linear-to-br  from-blue-50 to-purple-50 border border-blue-200/50 text-gray-700 hover:text-blue-600 transition-colors duration-300"
                 whileHover={{ scale: 1.1, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -369,7 +368,10 @@ export default function TestimonialsSection() {
                 {Array.from({ length: totalPages }).map((_, idx) => (
                   <motion.button
                     key={idx}
+                    type="button"
                     onClick={() => goToPage(idx + 1)}
+                    aria-label={`Go to page ${idx + 1}`}
+                    aria-current={idx + 1 === currentPage ? 'page' : undefined}
                     className={`transition-all duration-300 ${
                       idx + 1 === currentPage
                         ? 'bg-linear-to-r from-blue-600 to-purple-600 w-8 h-3 rounded-full'
@@ -383,6 +385,7 @@ export default function TestimonialsSection() {
 
               {/* Next Button */}
               <motion.button
+                type="button"
                 onClick={nextPage}
                 className="p-3 rounded-full bg-linear-to-br from-blue-50 to-purple-50 border border-blue-200/50 text-gray-700 hover:text-blue-600 transition-colors duration-300"
                 whileHover={{ scale: 1.1, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
@@ -430,6 +433,7 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
+              onClick={() => scrollToSection("contact")}
           >
             Get In Touch
             <motion.span
